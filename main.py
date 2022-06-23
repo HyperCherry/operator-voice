@@ -40,5 +40,5 @@ def file_name_listdir(file_dir):
 
 @sv.on_notice('notify.poke')
 async def poke_back(session: NoticeSession):
-    if session.target_id == session.self_id:
+    if session.ctx['target_id'] == session.ctx['self_id']:
         await session.send(R.img(random_expression()).cqcode)
