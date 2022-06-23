@@ -28,7 +28,7 @@ def random_voice():
 
 def random_expression():
     expression = choice(file_name_listdir(R.img('operator').path))
-    return "operator/"+expression
+    return "operator/" + expression
 
 
 def file_name_listdir(file_dir):
@@ -40,4 +40,5 @@ def file_name_listdir(file_dir):
 
 @sv.on_notice('notify.poke')
 async def poke_back(session: NoticeSession):
-    await session.send(R.img(random_expression()).cqcode)
+    if session.event.target_id == session.event.self_id:
+        await session.send(R.img(random_expression()).cqcode)
