@@ -29,7 +29,7 @@ class DownloadTools:
                           'AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1'
         }
         # noinspection PyBroadException
-    try:
+        try:
             stream = requests.get(url, headers=headers, stream=True)
             if stream.status_code == 200:
                 if stringify:
@@ -37,8 +37,8 @@ class DownloadTools:
                 else:
                     return stream.content
         except Exception:
-            print(traceback.format_exc())
-        return False
+            print(traceback)
+            return False
 
 
 class Wiki(DownloadTools):
@@ -106,5 +106,3 @@ class Wiki(DownloadTools):
             make_folder(folder)
             return False
         return file
-
-
