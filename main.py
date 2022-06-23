@@ -18,13 +18,12 @@ lang = "CHN"
 @sv.on_fullmatch('', only_to_me=True)
 async def greet(bot, ev):
     await bot.send(ev, '我在哦博士~')
-    await bot.send(ev, R.rec(lang).path)
     await bot.send(ev, R.rec(random_voice()).cqcode)
 
 
 def random_voice():
-    voice_list = file_name_listdir(R.rec(lang).path)
-    return lang + choice(voice_list)
+    voice = choice(file_name_listdir(R.rec(lang).path))  # 获取到文件名
+    return lang + "/" + voice
 
 
 def file_name_listdir(file_dir):
