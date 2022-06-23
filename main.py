@@ -26,11 +26,16 @@ def random_voice():
     return lang + "/" + voice
 
 
+def random_expression():
+    expression = choice(file_name_listdir(R.img('operator').path))
+    return expression
+
+
 def file_name_listdir(file_dir):
-    voices = []
+    targets = []
     for files in os.listdir(file_dir):
-        voices.append(files)
-    return voices
+        targets.append(files)
+    return targets
 
 
 @sv.on_notice('notify.poke')
