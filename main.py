@@ -1,3 +1,5 @@
+import os
+
 from hoshino import Service, R
 from random import choice
 from hoshino.typing import MessageSegment, NoticeSession, CQEvent
@@ -19,12 +21,16 @@ async def greet(bot, ev):
     await bot.send(ev, R.rec(random_voice()).cqcode)
 
 
-def get_voice(target):
-    return lang + "/澄闪_" + target + ".wav"
-
-
 def random_voice():
-    return lang + "/澄闪_" + choice(nudge) + ".wav"
+    voice_list = file_name_listdir(R.rec(lang).path)
+    return lang+choice(voice_list)
+
+
+def file_name_listdir(file_dir):
+    voices = []
+    for files in os.listdir(file_dir):
+        voices.append(files)
+    return voices
 
 
 @sv.on_notice('notify.poke')
