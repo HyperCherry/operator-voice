@@ -2,11 +2,11 @@ from pathlib import Path
 
 from hoshino import Service, R
 
-import wiki
+from .wiki import Wiki
 
 sv = Service('operator_voice')
 
-wiki = wiki.Wiki()
+wiki = Wiki()
 wiki.download_pallas_voices()
 
 
