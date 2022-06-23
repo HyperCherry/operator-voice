@@ -13,5 +13,6 @@ nudge = ['问候', '闲置', '交谈1', '交谈2', '交谈3',
 @sv.on_fullmatch('', only_to_me=True)
 async def demo_fun_1(bot, ev):
     await bot.send(ev, '我在哦博士~')
-    await bot.send(ev, choice(nudge))
-    # await bot.send(ev, R.rec().cqcode)
+    s = "澄闪_" + choice(nudge) + ".wav"
+    await bot.send(ev, s)
+    await bot.send(ev, R.rec(s).cqcode)
