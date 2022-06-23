@@ -1,13 +1,12 @@
 from pathlib import Path
 
 from hoshino import Service, R
-from .wiki import Wiki, nudge
 
 import wiki
 
 sv = Service('operator_voice')
 
-wiki = Wiki()
+wiki = wiki.Wiki()
 wiki.download_pallas_voices()
 
 
