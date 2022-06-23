@@ -40,4 +40,4 @@ def file_name_listdir(file_dir):
 
 @sv.on_notice('notify.poke')
 async def poke_back(session: NoticeSession):
-    await session.send(R.img("operator/澄闪_疑惑.jpg").cqcode)
+    await session.send(R.img(random_expression()).cqcode)
