@@ -29,4 +29,4 @@ def random_voice():
 
 @sv.on_notice('notify.poke')
 async def poke_back(session: NoticeSession):
-    await session.send(R.rec(get_voice("戳一下")).cqcode)
+    await session.send(R.img("operator/澄闪_疑惑.jpg").cqcode)
