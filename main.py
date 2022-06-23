@@ -17,4 +17,5 @@ async def demo_fun_1(bot, ev):
 
 
 def random_voice():
-    return "澄闪_" + choice(nudge) + ".wav"
+    # return "JPN/澄闪_" + choice(nudge) + ".wav"
+    return "CHN/澄闪_" + choice(nudge) + ".wav"
