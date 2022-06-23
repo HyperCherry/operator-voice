@@ -1,5 +1,6 @@
 from hoshino import Service, R
 from random import choice
+from hoshino.typing import MessageSegment, NoticeSession, CQEvent
 
 sv = Service('operator_voice')
 
@@ -27,5 +28,5 @@ def random_voice():
 
 
 @sv.on_notice('notify.poke')
-async def poke(bot, ev):
-    await bot.send(ev, R.rec(get_voice("戳一下")).cqcode)
+async def poke_back(session: NoticeSession):
+    await session.send(R.rec(get_voice("戳一下")).cqcode)
