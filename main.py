@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from hoshino import Service, R
-from wiki import Wiki, nudge
+from .wiki import Wiki, nudge
 
 import wiki
 
