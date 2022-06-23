@@ -28,7 +28,7 @@ def random_voice():
 
 def random_expression():
     expression = choice(file_name_listdir(R.img('operator').path))
-    return expression
+    return "operator/"+expression
 
 
 def file_name_listdir(file_dir):
