@@ -6,12 +6,6 @@ from hoshino.typing import MessageSegment, NoticeSession, CQEvent
 
 sv = Service('operator_voice')
 
-nudge = ['问候', '闲置', '交谈1', '交谈2', '交谈3',
-         '晋升后交谈1', '晋升后交谈2', '信赖提升后交谈1', '信赖提升后交谈2', '信赖提升后交谈3',
-         '戳一下', '信赖触摸',
-         '干员报到', '精英化晋升1',
-         '编入队伍', '任命队长']
-
 lang = "CHN"
 
 
